@@ -1,0 +1,61 @@
+/*------------------------- Global definitions ---------------------------*/
+
+/*------------------------------- CSS Resets -----------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+button {
+  line-height: 1.1;
+}
+
+/* Avoid text overflows */
+h1,
+h2,
+p {
+  overflow-wrap: break-word;
+}
+
+/* Remove list styles on ul, elements with a list role, which suggests default styling will be removed */
+ul {
+  list-style: none;
+}
+
+/* Remove built-in form typography styles */
+button {
+  font: inherit;
+}
+
+/* Make images easier to work with */
+picture,
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/*---------------------------- Main stylings -----------------------------*/
