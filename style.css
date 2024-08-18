@@ -1,4 +1,39 @@
 /*------------------------- Global definitions ---------------------------*/
+:root {
+  /* Colors */
+  --color-primary-1: hsl(226, 43%, 10%); /* #0E1323 */
+  --color-primary-2: hsl(246, 80%, 60%); /* #5747EA */
+  --color-primary-3: hsl(235, 46%, 20%); /* #1C204B */
+  --color-primary-4: hsl(235, 45%, 62%); /* #7078C9 */
+  --color-primary-5: hsl(236, 100%, 87%); /* #BBC0FF */
+  --color-neutral-1: hsl(0, 0%, 100%); /* #FFFFFF */
+  --color-neutral-2: hsla(0, 0%, 0%, 25%); /* #000000 25% */
+  --color-misc-1: hsl(15, 100%, 70%); /* #FF8B64 */
+  --color-misc-2: hsl(195, 74%, 62%); /* #55C2E6 */
+  --color-misc-3: hsl(348, 100%, 68%); /* #FF5E7D */
+  --color-misc-4: hsl(145, 58%, 55%); /* #4BCF82 */
+  --color-misc-5: hsl(264, 64%, 52%); /* #7335D2 */
+  --color-misc-6: hsl(43, 84%, 65%); /* #F1C75B */
+
+  /* Font sizes */
+  /* Font weights */
+  --fonnt-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+
+  /* Line heights */
+  /* Box shadows */
+  --box-shadow-1: 0rem 0.25rem 0.25rem 0rem var(--color-neutral-2); /*0px 4px 4px 0px #000000 25% */
+
+  /* Border widths */
+  --border-width-none: 0rem;
+  --border-width-s: 0.1875rem; /* 3px */
+
+  /* Border radius */
+  --border-radius-s: 0.9375rem; /* 15px */
+
+  /* Spacings */
+}
 
 /*------------------------------- CSS Resets -----------------------------*/
 *,
