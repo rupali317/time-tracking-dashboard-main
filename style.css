@@ -256,7 +256,12 @@ article.dashboard {
     background-color: var(--color-primary-3);
   }
 
-  .sub-section {
+  .sub-section-1 {
+    display: flex;
+    justify-content: end;
+  }
+
+  .sub-section-2 {
     background-color: var(--color-primary-3);
     border-radius: var(--border-radius-1);
     padding: var(--space-11) var(--space-7);
@@ -276,6 +281,11 @@ button:hover {
 .btn-style-1 {
   background-color: transparent;
   border: none;
+
+  &:hover {
+    filter: brightness(0) saturate(100%) invert(99%) sepia(8%) saturate(1083%)
+      hue-rotate(168deg) brightness(119%) contrast(100%);
+  }
 }
 
 .main-background-1 {
