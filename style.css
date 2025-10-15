@@ -259,12 +259,15 @@ article.dashboard {
   .sub-section-1 {
     display: flex;
     justify-content: end;
+    height: var(--space-18); /* RRC - Research other alternatives */
   }
 
   .sub-section-2 {
     background-color: var(--color-primary-3);
     border-radius: var(--border-radius-1);
     padding: var(--space-11) var(--space-7);
+    position: relative;
+    z-index: 1;
 
     &:hover {
       background-color: var(--color-primary-6);
