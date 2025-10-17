@@ -68,6 +68,7 @@
   --space-22: 3.3125rem; /* 53px */
   --space-23: 4rem; /* 64px */
   --space-24: 5rem; /* 80px */
+  --space-25: 2.8125rem; /* 45px */
 }
 
 @font-face {
@@ -190,7 +191,7 @@ a {
 }
 
 .gap-1 {
-  gap: var(--space-xxs-2);
+  gap: var(--space-1);
 }
 
 .gap-2 {
@@ -299,6 +300,7 @@ button:hover {
   img {
     border: var(--space-1) solid var(--color-neutral-1);
     border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow-1);
   }
 }
 
@@ -321,4 +323,73 @@ button:hover {
 .text-style-4 {
   font-size: var(--font-size-4);
   font-weight: var(--font-weight-light);
+}
+
+@media (min-width: 48rem) {
+  article.dashboard {
+    display: grid;
+    grid-template-areas:
+      "placement-7 placement-1 placement-2 placement-3"
+      "placement-7 placement-4 placement-5 placement-6";
+  }
+
+  .card-background-1 {
+    grid-area: placement-1;
+  }
+
+  .card-background-2 {
+    grid-area: placement-2;
+  }
+
+  .card-background-3 {
+    grid-area: placement-3;
+  }
+
+  .card-background-4 {
+    grid-area: placement-4;
+  }
+
+  .card-background-5 {
+    grid-area: placement-5;
+  }
+
+  .card-background-6 {
+    grid-area: placement-6;
+  }
+
+  .card-background-7 {
+    grid-area: placement-7;
+  }
+
+  .text-style-2 {
+    font-size: var(--font-size-5);
+  }
+
+  .card {
+    max-width: 15.9375rem; /* 255px */
+
+    ul {
+      flex-direction: column;
+      gap: var(--space-6);
+      padding: var(--space-9) var(--space-14) var(--space-14);
+    }
+
+    .sub-section-1 {
+      height: var(--space-25); /* RRC - Research other alternatives */
+    }
+
+    .main-background-1 {
+      flex-direction: column;
+      row-gap: var(--space-13);
+      column-gap: var(--space-13);
+      gap: var(--space-20);
+      padding: var(--space-17) var(--space-14) var(--space-24);
+
+      img {
+        /* RRC - Check if this is correct way */
+        width: 4.875rem; /* 78px */
+        height: 4.875rem; /* 78px */
+      }
+    }
+  }
 }
