@@ -22,7 +22,7 @@
   --font-size-3: 1.5rem; /* 24px */
   --font-size-4: 2rem; /* 32px */
   --font-size-5: 2.5rem; /* 40px */
-  --font-size-5: 3.5rem; /* 56px */
+  --font-size-6: 3.5rem; /* 56px */
 
   /* Font weights */
   --font-weight-light: 300;
@@ -202,7 +202,9 @@ a {
   flex-direction: column;
 }
 
-.flex-alignment-1 {
+.flex-style-1,
+.flex-style-2 {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -331,6 +333,17 @@ button:hover {
     grid-template-areas:
       "placement-7 placement-1 placement-2 placement-3"
       "placement-7 placement-4 placement-5 placement-6";
+    gap: var(--space-13);
+  }
+
+  .flex-style-1 {
+    flex-direction: column;
+    align-items: start;
+    gap: var(--space-4);
+  }
+
+  .margin-top-2 {
+    margin-top: var(--space-7);
   }
 
   .card-background-1 {
@@ -365,6 +378,10 @@ button:hover {
     font-size: var(--font-size-5);
   }
 
+  .text-style-4 {
+    font-size: var(--font-size-6);
+  }
+
   .card {
     max-width: 15.9375rem; /* 255px */
 
@@ -376,6 +393,10 @@ button:hover {
 
     .sub-section-1 {
       height: var(--space-25); /* RRC - Research other alternatives */
+    }
+
+    .sub-section-2 {
+      padding: var(--space-12) var(--space-16) var(--space-14) var(--space-13);
     }
 
     .main-background-1 {
