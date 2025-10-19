@@ -217,13 +217,15 @@ article.dashboard {
   display: flex;
   flex-direction: column;
   gap: var(--space-7);
-  padding: var(--space-7);
+  max-width: 20.4375rem; /* 327px */
+  margin: var(--space-4) auto; /* RRC - Find out why margin-top and margin-bottom are not working */
   align-items: center; /* RRC: Notice that without it the card stretches but with center it has a width of 327px */
 }
 
 .card {
   border-radius: var(--border-radius-1);
-  min-width: 20.4375rem; /* 327px */
+  /*min-width: 20.4375rem;*/ /* 327px */
+  width: 100%;
 
   ul {
     display: flex;
@@ -325,92 +327,4 @@ button:hover {
 .text-style-4 {
   font-size: var(--font-size-4);
   font-weight: var(--font-weight-light);
-}
-
-@media (min-width: 48rem) {
-  article.dashboard {
-    display: grid;
-    grid-template-areas:
-      "placement-7 placement-1 placement-2 placement-3"
-      "placement-7 placement-4 placement-5 placement-6";
-    gap: var(--space-13);
-  }
-
-  .flex-style-1 {
-    flex-direction: column;
-    align-items: start;
-    gap: var(--space-4);
-  }
-
-  .margin-top-2 {
-    margin-top: var(--space-7);
-  }
-
-  .card-background-1 {
-    grid-area: placement-1;
-  }
-
-  .card-background-2 {
-    grid-area: placement-2;
-  }
-
-  .card-background-3 {
-    grid-area: placement-3;
-  }
-
-  .card-background-4 {
-    grid-area: placement-4;
-  }
-
-  .card-background-5 {
-    grid-area: placement-5;
-  }
-
-  .card-background-6 {
-    grid-area: placement-6;
-  }
-
-  .card-background-7 {
-    grid-area: placement-7;
-  }
-
-  .text-style-2 {
-    font-size: var(--font-size-5);
-  }
-
-  .text-style-4 {
-    font-size: var(--font-size-6);
-  }
-
-  .card {
-    max-width: 15.9375rem; /* 255px */
-
-    ul {
-      flex-direction: column;
-      gap: var(--space-6);
-      padding: var(--space-9) var(--space-14) var(--space-14);
-    }
-
-    .sub-section-1 {
-      height: var(--space-25); /* RRC - Research other alternatives */
-    }
-
-    .sub-section-2 {
-      padding: var(--space-12) var(--space-16) var(--space-14) var(--space-13);
-    }
-
-    .main-background-1 {
-      flex-direction: column;
-      row-gap: var(--space-13);
-      column-gap: var(--space-13);
-      gap: var(--space-20);
-      padding: var(--space-17) var(--space-14) var(--space-24);
-
-      img {
-        /* RRC - Check if this is correct way */
-        width: 4.875rem; /* 78px */
-        height: 4.875rem; /* 78px */
-      }
-    }
-  }
 }
