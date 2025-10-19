@@ -160,6 +160,7 @@ body {
   color: var(--color-neutral-1);
   line-height: var(--line-height-1);
   font-weight: var(--font-weight-regular);
+  margin: var(--space-5);
 }
 
 em {
@@ -186,22 +187,6 @@ a {
   white-space: nowrap;
 }
 
-.display-flex {
-  display: flex;
-}
-
-.gap-1 {
-  gap: var(--space-1);
-}
-
-.gap-2 {
-  gap: var(--space-5);
-}
-
-.flex-direction-column {
-  flex-direction: column;
-}
-
 .flex-style-1,
 .flex-style-2 {
   display: flex;
@@ -209,8 +194,10 @@ a {
   align-items: center;
 }
 
-.margin-top-1 {
-  margin-top: var(--space-3);
+.flex-style-3 {
+  display: flex;
+  gap: var(--space-2);
+  flex-direction: column;
 }
 
 article.dashboard {
@@ -229,7 +216,7 @@ article.dashboard {
 
   ul {
     display: flex;
-    gap: var(--space-22);
+    justify-content: space-between;
     padding: var(--space-7) var(--space-10) var(--space-8);
   }
 
@@ -273,6 +260,9 @@ article.dashboard {
     padding: var(--space-11) var(--space-7);
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
 
     &:hover {
       background-color: var(--color-primary-6);
@@ -300,6 +290,9 @@ button:hover {
   background-color: var(--color-primary-2);
   border-radius: var(--border-radius-1);
   padding: var(--space-16) var(--space-19) var(--space-15) var(--space-14);
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
 
   img {
     border: var(--space-1) solid var(--color-neutral-1);
@@ -322,9 +315,13 @@ button:hover {
 .text-style-3 {
   font-size: var(--font-size-2);
   font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-1);
 }
 
 .text-style-4 {
   font-size: var(--font-size-4);
   font-weight: var(--font-weight-light);
 }
+
+/* RRC - Check why border radius at the bottom of the cards produce the faint color */
+/* RRC - Adjust the position of the icons according to figma */
