@@ -69,6 +69,11 @@
   --space-23: 4rem; /* 64px */
   --space-24: 5rem; /* 80px */
   --space-25: 2.8125rem; /* 45px */
+  --space-26: 1rem; /* 16px */
+
+  /* Filters */
+  --filter-1: brightness(0) saturate(100%) invert(99%) sepia(8%) saturate(1083%)
+    hue-rotate(168deg) brightness(119%) contrast(100%);
 }
 
 @font-face {
@@ -205,19 +210,23 @@ article.dashboard {
   flex-direction: column;
   gap: var(--space-7);
   max-width: 20.4375rem; /* 327px */
-  margin: var(--space-4) auto; /* RRC - Find out why margin-top and margin-bottom are not working */
-  align-items: center; /* RRC: Notice that without it the card stretches but with center it has a width of 327px */
+  margin: var(--space-4) auto;
 }
 
 .card {
   border-radius: var(--border-radius-1);
-  /*min-width: 20.4375rem;*/ /* 327px */
   width: 100%;
 
   ul {
     display: flex;
     justify-content: space-between;
     padding: var(--space-7) var(--space-10) var(--space-8);
+  }
+
+  img {
+    position: relative;
+    bottom: var(--space-4);
+    right: var(--space-26);
   }
 
   &.card-background-1 {
@@ -252,6 +261,7 @@ article.dashboard {
     display: flex;
     justify-content: end;
     height: var(--space-18); /* RRC - Research other alternatives */
+    clip-path: content-box;
   }
 
   .sub-section-2 {
@@ -271,18 +281,13 @@ article.dashboard {
   }
 }
 
-button:hover {
-  cursor: pointer;
-  /* RRC - Add the color */
-}
-
-.btn-style-1 {
+button {
   background-color: transparent;
   border: none;
 
   &:hover {
-    filter: brightness(0) saturate(100%) invert(99%) sepia(8%) saturate(1083%)
-      hue-rotate(168deg) brightness(119%) contrast(100%);
+    cursor: pointer;
+    filter: var(--filter-1);
   }
 }
 
@@ -324,4 +329,3 @@ button:hover {
 }
 
 /* RRC - Check why border radius at the bottom of the cards produce the faint color */
-/* RRC - Adjust the position of the icons according to figma */
