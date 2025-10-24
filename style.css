@@ -328,9 +328,11 @@ button {
   font-weight: var(--font-weight-light);
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 80rem) {
   article.dashboard {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 69.375rem; /* 1110px */
     grid-template-areas:
       "placement-7 placement-1 placement-2 placement-3"
       "placement-7 placement-4 placement-5 placement-6";
