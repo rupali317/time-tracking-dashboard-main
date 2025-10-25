@@ -183,6 +183,12 @@ a {
   }
 }
 
+main {
+  /* RRC - Check if this is the best way */
+  min-height: 100vh;
+  display: flex;
+}
+
 .visually-hidden {
   width: 1px;
   height: 1px;
@@ -191,12 +197,6 @@ a {
   position: absolute;
   overflow: hidden;
   white-space: nowrap;
-}
-
-.wrapper {
-  /* RRC - Check if this is the best way */
-  min-height: 100vh;
-  display: flex;
 }
 
 .flex-style-1,
