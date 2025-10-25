@@ -173,7 +173,7 @@ em {
   font-style: normal;
 }
 
-a {
+button {
   text-decoration: none;
   color: var(--color-primary-4);
   font-size: var(--font-size-2);
