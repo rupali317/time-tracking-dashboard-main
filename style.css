@@ -42,6 +42,7 @@
   /* Border radius */
   --border-radius-1: 0.9375rem; /* 15px */
   --border-radius-2: 100%;
+  --border-radius-3: 0.625rem; /* 10px */
 
   /* Spacings */
   --space-none: 0rem;
@@ -263,11 +264,18 @@ article.dashboard {
     justify-content: end;
     height: var(--space-18); /* RRC - Research other alternatives */
     clip-path: content-box;
+
+    img {
+      position: relative;
+      bottom: var(--space-4);
+      right: var(--space-26);
+    }
   }
 
   .sub-section-2 {
     background-color: var(--color-primary-3);
-    border-radius: var(--border-radius-1);
+    border-radius: var(--border-radius-1) var(--border-radius-1)
+      var(--border-radius-3) var(--border-radius-3);
     padding: var(--space-11) var(--space-7);
     position: relative;
     z-index: 1;
