@@ -209,14 +209,7 @@ main {
 .flex-style-2 {
   display: flex;
   justify-content: space-between;
-}
-
-.flex-style-1 {
   align-items: center;
-}
-
-.flex-style-2 {
-  align-items: baseline;
 }
 
 .flex-style-3 {
