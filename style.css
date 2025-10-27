@@ -310,6 +310,11 @@ button {
     cursor: pointer;
     filter: var(--filter-1);
   }
+
+  img {
+    width: var(--space-6); /* 21px */
+    height: auto;
+  }
 }
 
 .main-background-1 {
@@ -324,6 +329,8 @@ button {
     border: var(--space-1) solid var(--color-neutral-1);
     border-radius: var(--border-radius-2);
     box-shadow: var(--box-shadow-1);
+    width: var(--space-23); /* 64px */
+    height: auto;
   }
 }
 
@@ -433,12 +440,6 @@ button {
       column-gap: var(--space-13);
       gap: var(--space-20);
       padding: var(--space-17) var(--space-14) var(--space-24);
-
-      img {
-        /* RRC - Check if this is correct way */
-        width: 4.875rem; /* 78px */
-        height: auto;
-      }
     }
   }
 }
