@@ -200,6 +200,10 @@ main {
   white-space: nowrap;
 }
 
+.break-word {
+  word-break: break-word;
+}
+
 .flex-style-1,
 .flex-style-2 {
   display: flex;
@@ -432,3 +436,6 @@ button {
 }
 
 /* RRC - Check why border radius at the bottom of the cards produce the faint color */
+/* RRC - Safari - check why cursor pointer is not showing immediately */
+/* RRC - Safari - The three dot icon seems squashed */
+/* RRC - The title is long and the icon is squashed */
