@@ -73,6 +73,7 @@
   --space-25: 2.8125rem; /* 45px */
   --space-26: 1rem; /* 16px */
   --space-27: 3.125rem; /* 50px */
+  --space-28: 4.875rem; /* 78px */
 
   /* Filters */
   --filter-1: brightness(0) saturate(100%) invert(99%) sepia(8%) saturate(1083%)
@@ -440,6 +441,10 @@ button {
       column-gap: var(--space-13);
       gap: var(--space-20);
       padding: var(--space-17) var(--space-14) var(--space-24);
+
+      img {
+        width: var(--space-28); /* 78px */
+      }
     }
   }
 }
