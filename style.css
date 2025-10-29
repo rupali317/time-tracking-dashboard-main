@@ -211,6 +211,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--space-4);
 }
 
 .flex-style-3 {
@@ -375,7 +376,6 @@ button {
   .flex-style-1 {
     flex-direction: column;
     align-items: start;
-    gap: var(--space-4);
   }
 
   .margin-top-2 {
@@ -453,4 +453,3 @@ button {
 /* RRC - Check why border radius at the bottom of the cards produce the faint color */
 /* RRC - Safari - check why cursor pointer is not showing immediately */
 /* RRC - Safari - The three dot icon seems squashed */
-/* RRC - The title is long and the icon is squashed */
