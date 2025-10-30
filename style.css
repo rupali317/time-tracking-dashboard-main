@@ -275,7 +275,7 @@ article.dashboard {
   .sub-section-1 {
     display: flex;
     justify-content: end;
-    height: var(--space-18); /* RRC - Research other alternatives */
+    height: var(--space-18);
     clip-path: content-box;
 
     img {
@@ -430,7 +430,7 @@ button {
 
     .sub-section-2 {
       padding: var(--space-12) var(--space-16) var(--space-14) var(--space-13);
-      height: calc(100% - var(--space-25)); /* RRC check this*/
+      height: calc(100% - var(--space-25));
       gap: var(--space-7);
     }
 
