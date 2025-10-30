@@ -187,7 +187,6 @@ button {
 }
 
 main {
-  /* RRC - Check if this is the best way */
   min-height: 100vh;
   display: flex;
 }

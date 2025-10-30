@@ -39,18 +39,20 @@
             />
             <div class="flex-style-3">
               <span class="text-style-1">Report for</span>
-              <em class="text-style-2 break-word">Jeremy Robson</em>
+              <span class="text-style-2 break-word">Jeremy Robson</span>
             </div>
           </div>
-          <ul>
-            <li><button aria-pressed="true" onclick="">Daily</button></li>
-            <li><button aria-pressed="false" onclick="">Weekly</button></li>
-            <li><button aria-pressed="false" onclick="">Monthly</button></li>
-          </ul>
+          <nav aria-label="Time period selection">
+            <ul>
+              <li><button aria-pressed="true" onclick="">Daily</button></li>
+              <li><button aria-pressed="false" onclick="">Weekly</button></li>
+              <li><button aria-pressed="false" onclick="">Monthly</button></li>
+            </ul>
+          </nav>
         </section>
 
         <!-- Work -->
-        <section class="card card-background-1">
+        <section class="card card-background-1" aria-labelledby="work-heading">
           <div class="sub-section-1">
             <img
               src="./images/icon-work.svg"
@@ -62,7 +64,7 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word">Work</h2>
+              <h2 class="text-style-3 break-word" id="work-heading">Work</h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -77,14 +79,19 @@
               </button>
             </div>
             <div class="flex-style-1">
-              <em class="text-style-4 break-word">32hrs</em>
-              <p class="text-style-1 break-word">Last Week - 36hrs</p>
+              <p class="text-style-4 break-word">
+                <span class="visually-hidden">Current period:</span>32hrs
+              </p>
+              <p class="text-style-1 break-word">
+                <span class="visually-hidden">Previous period:</span>Last Week -
+                36hrs
+              </p>
             </div>
           </div>
         </section>
 
         <!-- Play -->
-        <section class="card card-background-2">
+        <section class="card card-background-2" aria-labelledby="play-heading">
           <div class="sub-section-1">
             <img
               src="./images/icon-play.svg"
@@ -96,7 +103,7 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word">Play</h2>
+              <h2 class="text-style-3 break-word" id="play-heading">Play</h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -111,14 +118,19 @@
               </button>
             </div>
             <div class="flex-style-1">
-              <em class="text-style-4 break-word">10hrs</em>
-              <p class="text-style-1 break-word">Last Week - 8hrs</p>
+              <p class="text-style-4 break-word">
+                <span class="visually-hidden">Current period:</span>10hrs
+              </p>
+              <p class="text-style-1 break-word">
+                <span class="visually-hidden">Previous period:</span>Last Week -
+                8hrs
+              </p>
             </div>
           </div>
         </section>
 
         <!-- Study -->
-        <section class="card card-background-3">
+        <section class="card card-background-3" aria-labelledby="study-heading">
           <div class="sub-section-1">
             <img
               src="./images/icon-study.svg"
@@ -130,7 +142,7 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word">Study</h2>
+              <h2 class="text-style-3 break-word" id="study-heading">Study</h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -145,14 +157,22 @@
               </button>
             </div>
             <div class="flex-style-1">
-              <em class="text-style-4 break-word">4hrs</em>
-              <p class="text-style-1 break-word">Last Week - 7hrs</p>
+              <p class="text-style-4 break-word">
+                <span class="visually-hidden">Current period:</span>4hrs
+              </p>
+              <p class="text-style-1 break-word">
+                <span class="visually-hidden">Previous period:</span>Last Week -
+                7hrs
+              </p>
             </div>
           </div>
         </section>
 
         <!-- Exercise -->
-        <section class="card card-background-4">
+        <section
+          class="card card-background-4"
+          aria-labelledby="exercise-heading"
+        >
           <div class="sub-section-1">
             <img
               src="./images/icon-exercise.svg"
@@ -164,7 +184,9 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word">Exercise</h2>
+              <h2 class="text-style-3 break-word" id="exercise-heading">
+                Exercise
+              </h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -179,14 +201,22 @@
               </button>
             </div>
             <div class="flex-style-1">
-              <em class="text-style-4 break-word">4hrs</em>
-              <p class="text-style-1 break-word">Last Week - 5hrs</p>
+              <p class="text-style-4 break-word">
+                <span class="visually-hidden">Current period:</span>4hrs
+              </p>
+              <p class="text-style-1 break-word">
+                <span class="visually-hidden">Previous period:</span>Last Week -
+                5hrs
+              </p>
             </div>
           </div>
         </section>
 
         <!-- Social -->
-        <section class="card card-background-5">
+        <section
+          class="card card-background-5"
+          aria-labelledby="social-heading"
+        >
           <div class="sub-section-1">
             <img
               src="./images/icon-social.svg"
@@ -198,7 +228,9 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word">Social</h2>
+              <h2 class="text-style-3 break-word" id="social-heading">
+                Social
+              </h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -213,14 +245,22 @@
               </button>
             </div>
             <div class="flex-style-1">
-              <em class="text-style-4 break-word">5hrs</em>
-              <p class="text-style-1 break-word">Last Week - 10hrs</p>
+              <p class="text-style-4 break-word">
+                <span class="visually-hidden">Current period:</span>5hrs
+              </p>
+              <p class="text-style-1 break-word">
+                <span class="visually-hidden">Previous period:</span>Last Week -
+                10hrs
+              </p>
             </div>
           </div>
         </section>
 
         <!-- Self Care -->
-        <section class="card card-background-6">
+        <section
+          class="card card-background-6"
+          aria-labelledby="selfcare-heading"
+        >
           <div class="sub-section-1">
             <img
               src="./images/icon-self-care.svg"
@@ -232,7 +272,9 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word">Self Care</h2>
+              <h2 class="text-style-3 break-word" id="selfcare-heading">
+                Self Care
+              </h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -247,8 +289,13 @@
               </button>
             </div>
             <div class="flex-style-1">
-              <em class="text-style-4 break-word">2hrs</em>
-              <p class="text-style-1 break-word">Last Week - 2hrs</p>
+              <p class="text-style-4 break-word">
+                <span class="visually-hidden">Current period:</span>2hrs
+              </p>
+              <p class="text-style-1 break-word">
+                <span class="visually-hidden">Previous period:</span>Last Week -
+                2hrs
+              </p>
             </div>
           </div>
         </section>
