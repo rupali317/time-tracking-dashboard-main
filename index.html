@@ -44,9 +44,30 @@
           </div>
           <nav aria-label="Time period selection">
             <ul>
-              <li><button aria-pressed="true" onclick="">Daily</button></li>
-              <li><button aria-pressed="false" onclick="">Weekly</button></li>
-              <li><button aria-pressed="false" onclick="">Monthly</button></li>
+              <li>
+                <button
+                  aria-pressed="true"
+                  onclick="getDataBasedOnTimePeriod(0)"
+                >
+                  Daily
+                </button>
+              </li>
+              <li>
+                <button
+                  aria-pressed="false"
+                  onclick="getDataBasedOnTimePeriod(1)"
+                >
+                  Weekly
+                </button>
+              </li>
+              <li>
+                <button
+                  aria-pressed="false"
+                  onclick="getDataBasedOnTimePeriod(2)"
+                >
+                  Monthly
+                </button>
+              </li>
             </ul>
           </nav>
         </section>
