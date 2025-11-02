@@ -1,18 +1,24 @@
 // Load default data
 getDataBasedOnTimePeriod(0);
 
+const activities = {
+  work: 0,
+  play: 1,
+  study: 2,
+  exercise: 3,
+  social: 4,
+  selfcare: 5,
+};
+
 function getDataBasedOnTimePeriod(TIME_PERIOD) {
-  // Read data from json file
   fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
       // Set titles
-      document.getElementById("js-work-heading").innerText = data[0].title;
-      document.getElementById("js-play-heading").innerText = data[1].title;
-      document.getElementById("js-study-heading").innerText = data[2].title;
-      document.getElementById("js-exercise-heading").innerText = data[3].title;
-      document.getElementById("js-social-heading").innerText = data[4].title;
-      document.getElementById("js-selfcare-heading").innerText = data[5].title;
+      Object.keys(activities).forEach((activity, index) => {
+        document.getElementById(`js-${activity}-heading`).innerText =
+          data[index].title;
+      });
 
       if (TIME_PERIOD === 0) {
         // Daily current
