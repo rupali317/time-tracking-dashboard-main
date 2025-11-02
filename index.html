@@ -20,6 +20,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="data.json" defer></script>
     <script src="main.js" defer></script>
     <title>Frontend Mentor | Time tracking dashboard</title>
   </head>
@@ -46,6 +47,7 @@
             <ul>
               <li>
                 <button
+                  class="active"
                   aria-pressed="true"
                   onclick="getDataBasedOnTimePeriod(0)"
                 >
@@ -85,7 +87,7 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word" id="work-heading">Work</h2>
+              <h2 class="text-style-3 break-word" id="js-work-heading"></h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -101,11 +103,12 @@
             </div>
             <div class="flex-style-1">
               <p class="text-style-4 break-word">
-                <span class="visually-hidden">Current period:</span>32hrs
+                <span class="visually-hidden">Current period:</span
+                ><span id="js-work-current-period">32</span>hrs
               </p>
               <p class="text-style-1 break-word">
                 <span class="visually-hidden">Previous period:</span>Last Week -
-                36hrs
+                <span id="js-work-previous-period">36</span>hrs
               </p>
             </div>
           </div>
@@ -124,7 +127,7 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word" id="play-heading">Play</h2>
+              <h2 class="text-style-3 break-word" id="js-play-heading"></h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -140,11 +143,12 @@
             </div>
             <div class="flex-style-1">
               <p class="text-style-4 break-word">
-                <span class="visually-hidden">Current period:</span>10hrs
+                <span class="visually-hidden">Current period:</span
+                ><span id="js-play-current-period">10</span>hrs
               </p>
               <p class="text-style-1 break-word">
                 <span class="visually-hidden">Previous period:</span>Last Week -
-                8hrs
+                <span id="js-play-previous-period">8</span>hrs
               </p>
             </div>
           </div>
@@ -163,7 +167,7 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word" id="study-heading">Study</h2>
+              <h2 class="text-style-3 break-word" id="js-study-heading"></h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -179,11 +183,12 @@
             </div>
             <div class="flex-style-1">
               <p class="text-style-4 break-word">
-                <span class="visually-hidden">Current period:</span>4hrs
+                <span class="visually-hidden">Current period:</span
+                ><span id="js-exercise-current-period">4</span>hrs
               </p>
               <p class="text-style-1 break-word">
                 <span class="visually-hidden">Previous period:</span>Last Week -
-                7hrs
+                <span id="js-study-previous-period">7</span>hrs
               </p>
             </div>
           </div>
@@ -205,9 +210,7 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word" id="exercise-heading">
-                Exercise
-              </h2>
+              <h2 class="text-style-3 break-word" id="js-exercise-heading"></h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -223,11 +226,12 @@
             </div>
             <div class="flex-style-1">
               <p class="text-style-4 break-word">
-                <span class="visually-hidden">Current period:</span>4hrs
+                <span class="visually-hidden">Current period:</span
+                ><span id="js-exercise-current-period">4</span>hrs
               </p>
               <p class="text-style-1 break-word">
                 <span class="visually-hidden">Previous period:</span>Last Week -
-                5hrs
+                <span id="js-exercise-previous-period">5</span>hrs
               </p>
             </div>
           </div>
@@ -249,9 +253,7 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word" id="social-heading">
-                Social
-              </h2>
+              <h2 class="text-style-3 break-word" id="js-social-heading"></h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -267,11 +269,12 @@
             </div>
             <div class="flex-style-1">
               <p class="text-style-4 break-word">
-                <span class="visually-hidden">Current period:</span>5hrs
+                <span class="visually-hidden">Current period:</span
+                ><span id="js-social-current-period">5</span>hrs
               </p>
               <p class="text-style-1 break-word">
                 <span class="visually-hidden">Previous period:</span>Last Week -
-                10hrs
+                <span id="js-social-previous-period">10</span>hrs
               </p>
             </div>
           </div>
@@ -293,9 +296,7 @@
           </div>
           <div class="sub-section-2">
             <div class="flex-style-2">
-              <h2 class="text-style-3 break-word" id="selfcare-heading">
-                Self Care
-              </h2>
+              <h2 class="text-style-3 break-word" id="js-selfcare-heading"></h2>
               <button
                 aria-label="More options"
                 class="btn-style-1 flex-style-4"
@@ -311,11 +312,12 @@
             </div>
             <div class="flex-style-1">
               <p class="text-style-4 break-word">
-                <span class="visually-hidden">Current period:</span>2hrs
+                <span class="visually-hidden">Current period:</span
+                ><span id="js-selfcare-current-period">2</span>hrs
               </p>
               <p class="text-style-1 break-word">
                 <span class="visually-hidden">Previous period:</span>Last Week -
-                2hrs
+                <span id="js-selfcare-previous-period">2</span>hrs
               </p>
             </div>
           </div>
