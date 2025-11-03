@@ -13,8 +13,9 @@ const activitiesMap = {
 const timeFrameMap = ["daily", "weekly", "monthly"];
 
 function updateAllActivities(activity, current, previous) {
-  document.getElementById(`js-${activity}-current-period`).innerText = current;
-  document.getElementById(`js-${activity}-previous-period`).innerText =
+  document.getElementById(`js-${activity}-current-period`).textContent =
+    current;
+  document.getElementById(`js-${activity}-previous-period`).textContent =
     previous;
 }
 
@@ -22,8 +23,13 @@ function setActiveTimeFrame(activePeriod) {
   const timePeriodList = document.querySelectorAll("[id*=js-button]");
   timePeriodList.forEach((timePeriod) => {
     timePeriod.classList.remove("active");
+    timePeriod.ariaPressed = false;
   });
-  document.getElementById(`js-button-${activePeriod}`).classList.add("active");
+  const currentActivePeriod = document.getElementById(
+    `js-button-${activePeriod}`
+  );
+  currentActivePeriod.classList.add("active");
+  currentActivePeriod.ariaPressed = true;
 }
 
 function getDataBasedOnTimePeriod(TIME_PERIOD) {
@@ -32,7 +38,7 @@ function getDataBasedOnTimePeriod(TIME_PERIOD) {
     .then((data) => {
       // Set titles
       Object.keys(activitiesMap).forEach((activity, index) => {
-        document.getElementById(`js-${activity}-heading`).innerText =
+        document.getElementById(`js-${activity}-heading`).textContent =
           data[index].title;
       });
       // Daily timeframe
