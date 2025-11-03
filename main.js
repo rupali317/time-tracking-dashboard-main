@@ -1,22 +1,28 @@
 // Load default data
 getDataBasedOnTimePeriod(0);
 
-const activitiesMap = {
-  work: 0,
-  play: 1,
-  study: 2,
-  exercise: 3,
-  social: 4,
-  selfcare: 5,
+const activityList = [
+  "work",
+  "play",
+  "study",
+  "exercise",
+  "social",
+  "selfcare",
+];
+
+const timeFrameMap = {
+  daily: "Yesterday",
+  weekly: "Last Week",
+  monthly: "Last Month",
 };
 
-const timeFrameMap = ["daily", "weekly", "monthly"];
-
-function updateAllActivities(activity, current, previous) {
+function updateAllActivities(activity, current, previous, timeFrameLabel) {
   document.getElementById(`js-${activity}-current-period`).textContent =
     current;
-  document.getElementById(`js-${activity}-previous-period`).textContent =
+  document.getElementById(`js-${activity}-previous-period-value`).textContent =
     previous;
+  document.getElementById(`js-${activity}-previous-period-label`).textContent =
+    timeFrameLabel;
 }
 
 function setActiveTimeFrame(activePeriod) {
@@ -36,42 +42,49 @@ function getDataBasedOnTimePeriod(TIME_PERIOD) {
   fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
+      const timeFrameKeys = Object.keys(timeFrameMap);
       // Set titles
-      Object.keys(activitiesMap).forEach((activity, index) => {
+      activityList.forEach((activity, index) => {
         document.getElementById(`js-${activity}-heading`).textContent =
           data[index].title;
       });
       // Daily timeframe
       if (TIME_PERIOD === 0) {
-        Object.keys(activitiesMap).forEach((activity, index) => {
+        activityList.forEach((activity, index) => {
           updateAllActivities(
             activity,
             data[index].timeframes.daily.current,
-            data[index].timeframes.daily.previous
+            data[index].timeframes.daily.previous,
+            timeFrameMap.daily
           );
         });
-        setActiveTimeFrame(timeFrameMap[0]);
+        setActiveTimeFrame(timeFrameKeys[0]);
       } // Weekly timeframe
       else if (TIME_PERIOD === 1) {
-        Object.keys(activitiesMap).forEach((activity, index) => {
+        activityList.forEach((activity, index) => {
           updateAllActivities(
             activity,
             data[index].timeframes.weekly.current,
-            data[index].timeframes.weekly.previous
+            data[index].timeframes.weekly.previous,
+            timeFrameMap.weekly
           );
         });
-        setActiveTimeFrame(timeFrameMap[1]);
+        setActiveTimeFrame(timeFrameKeys[1]);
       } // Monthly timeframe
       else if (TIME_PERIOD === 2) {
-        Object.keys(activitiesMap).forEach((activity, index) => {
+        activityList.forEach((activity, index) => {
           updateAllActivities(
             activity,
             data[index].timeframes.monthly.current,
-            data[index].timeframes.monthly.previous
+            data[index].timeframes.monthly.previous,
+            timeFrameMap.monthly
           );
         });
-        setActiveTimeFrame(timeFrameMap[2]);
+        setActiveTimeFrame(timeFrameKeys[2]);
       }
     })
-    .catch((error) => console.error("Error loading data: " + error));
+    .catch((error) => {
+      console.error("Error loading data: " + error);
+      alert("Error loading data on the dashboard");
+    });
 }
