@@ -15,7 +15,10 @@ const timeFrameMap = {
 
 let cachedData = null;
 
-getDataBasedOnTimePeriod(0); // Load default data
+document.addEventListener(
+  "DOMContentLoaded",
+  () => getDataBasedOnTimePeriod(0) // Load default data
+);
 
 const timePeriodList = document.querySelectorAll("[id^=js-button]");
 timePeriodList.forEach((timePeriod, index) =>
