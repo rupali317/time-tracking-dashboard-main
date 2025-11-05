@@ -40,12 +40,24 @@ async function loadData() {
 }
 
 function updateAllActivities(activity, current, previous, timeFrameLabel) {
-  document.getElementById(`js-${activity}-current-period`).textContent =
-    current;
-  document.getElementById(`js-${activity}-previous-period-value`).textContent =
-    previous;
-  document.getElementById(`js-${activity}-previous-period-label`).textContent =
-    timeFrameLabel;
+  const currentPeriodElement = document.getElementById(
+    `js-${activity}-current-period`
+  );
+  const previousPeriodValueElement = document.getElementById(
+    `js-${activity}-previous-period-value`
+  );
+  const previousPeriodLabelElement = document.getElementById(
+    `js-${activity}-previous-period-label`
+  );
+  if (currentPeriodElement) {
+    currentPeriodElement.textContent = current;
+  }
+  if (previousPeriodValueElement) {
+    previousPeriodValueElement.textContent = previous;
+  }
+  if (previousPeriodLabelElement) {
+    previousPeriodLabelElement.textContent = timeFrameLabel;
+  }
 }
 
 function setActiveTimeFrame(activePeriod) {
@@ -64,8 +76,10 @@ async function getDataBasedOnTimePeriod(TIME_PERIOD) {
   const data = await loadData();
   // Set titles
   activityList.forEach((activity, index) => {
-    document.getElementById(`js-${activity}-heading`).textContent =
-      data[index].title;
+    const headingElement = document.getElementById(`js-${activity}-heading`);
+    if (headingElement) {
+      headingElement.textContent = data[index].title;
+    }
   });
   activityList.forEach((activity, index) => {
     updateAllActivities(
