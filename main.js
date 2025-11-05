@@ -49,13 +49,13 @@ function updateAllActivities(activity, current, previous, timeFrameLabel) {
 function setActiveTimeFrame(activePeriod) {
   timePeriodList.forEach((timePeriod) => {
     timePeriod.classList.remove("active");
-    timePeriod.ariaPressed = false;
+    timePeriod.ariaPressed = "false";
   });
   const currentActivePeriod = document.getElementById(
     `js-button-${activePeriod}`
   );
   currentActivePeriod.classList.add("active");
-  currentActivePeriod.ariaPressed = true;
+  currentActivePeriod.ariaPressed = "true";
 }
 
 async function getDataBasedOnTimePeriod(TIME_PERIOD) {
