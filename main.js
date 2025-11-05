@@ -17,15 +17,17 @@ let cachedData = null;
 const timeFrameKeys = Object.keys(timeFrameMap);
 const timeFrameValues = Object.values(timeFrameMap);
 
-document.addEventListener(
-  "DOMContentLoaded",
-  () => getDataBasedOnTimePeriod(0) // Load default data
-);
+document.addEventListener("DOMContentLoaded", () => {
+  initializeEventListeners();
+  getDataBasedOnTimePeriod(0); // Load default data
+});
 
-const timePeriodList = document.querySelectorAll("[id^=js-button]");
-timePeriodList.forEach((timePeriod, index) =>
-  timePeriod.addEventListener("click", () => getDataBasedOnTimePeriod(index))
-);
+function initializeEventListeners() {
+  const timePeriodList = document.querySelectorAll("[id^=js-button]");
+  timePeriodList.forEach((timePeriod, index) =>
+    timePeriod.addEventListener("click", () => getDataBasedOnTimePeriod(index))
+  );
+}
 
 async function loadData() {
   if (cachedData) return cachedData;
