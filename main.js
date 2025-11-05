@@ -15,18 +15,23 @@ const timeFrameMap = {
 
 let cachedData = null;
 
+getDataBasedOnTimePeriod(0); // Load default data
+
 const timePeriodList = document.querySelectorAll("[id^=js-button]");
 timePeriodList.forEach((timePeriod, index) =>
   timePeriod.addEventListener("click", () => getDataBasedOnTimePeriod(index))
 );
 
-getDataBasedOnTimePeriod(0); // Load default data
-
 async function loadData() {
   if (cachedData) return cachedData;
-  const response = await fetch("data.json");
-  cachedData = await response.json();
-  return cachedData;
+  try {
+    const response = await fetch("data.json");
+    cachedData = await response.json();
+    return cachedData;
+  } catch (error) {
+    console.error("Failed to load data", error);
+    throw error;
+  }
 }
 
 function updateAllActivities(activity, current, previous, timeFrameLabel) {
