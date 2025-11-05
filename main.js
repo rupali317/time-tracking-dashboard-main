@@ -14,6 +14,8 @@ const timeFrameMap = {
 };
 
 let cachedData = null;
+const timeFrameKeys = Object.keys(timeFrameMap);
+const timeFrameValues = Object.values(timeFrameMap);
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -60,8 +62,6 @@ function setActiveTimeFrame(activePeriod) {
 
 async function getDataBasedOnTimePeriod(TIME_PERIOD) {
   const data = await loadData();
-  const timeFrameKeys = Object.keys(timeFrameMap);
-  const timeFrameValues = Object.values(timeFrameMap);
   // Set titles
   activityList.forEach((activity, index) => {
     document.getElementById(`js-${activity}-heading`).textContent =
