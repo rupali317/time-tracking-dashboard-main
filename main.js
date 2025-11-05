@@ -15,6 +15,11 @@ const timeFrameMap = {
 
 let cachedData = null;
 
+const timePeriodList = document.querySelectorAll("[id^=js-button]");
+timePeriodList.forEach((timePeriod, index) =>
+  timePeriod.addEventListener("click", () => getDataBasedOnTimePeriod(index))
+);
+
 getDataBasedOnTimePeriod(0); // Load default data
 
 async function loadData() {
@@ -34,7 +39,6 @@ function updateAllActivities(activity, current, previous, timeFrameLabel) {
 }
 
 function setActiveTimeFrame(activePeriod) {
-  const timePeriodList = document.querySelectorAll("[id^=js-button]");
   timePeriodList.forEach((timePeriod) => {
     timePeriod.classList.remove("active");
     timePeriod.ariaPressed = false;
