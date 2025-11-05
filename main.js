@@ -1,6 +1,3 @@
-// Load default data
-getDataBasedOnTimePeriod(0);
-
 const activityList = [
   "work",
   "play",
@@ -15,6 +12,17 @@ const timeFrameMap = {
   weekly: "Last Week",
   monthly: "Last Month",
 };
+
+let cachedData = null;
+
+getDataBasedOnTimePeriod(0); // Load default data
+
+async function loadData() {
+  if (cachedData) return cachedData;
+  const response = await fetch("data.json");
+  cachedData = await response.json();
+  return cachedData;
+}
 
 function updateAllActivities(activity, current, previous, timeFrameLabel) {
   document.getElementById(`js-${activity}-current-period`).textContent =
@@ -38,29 +46,22 @@ function setActiveTimeFrame(activePeriod) {
   currentActivePeriod.ariaPressed = true;
 }
 
-function getDataBasedOnTimePeriod(TIME_PERIOD) {
-  fetch("data.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const timeFrameKeys = Object.keys(timeFrameMap);
-      const timeFrameValues = Object.values(timeFrameMap);
-      // Set titles
-      activityList.forEach((activity, index) => {
-        document.getElementById(`js-${activity}-heading`).textContent =
-          data[index].title;
-      });
-      activityList.forEach((activity, index) => {
-        updateAllActivities(
-          activity,
-          data[index].timeframes[timeFrameKeys[TIME_PERIOD]].current,
-          data[index].timeframes[timeFrameKeys[TIME_PERIOD]].previous,
-          timeFrameValues[TIME_PERIOD]
-        );
-      });
-      setActiveTimeFrame(timeFrameKeys[TIME_PERIOD]);
-    })
-    .catch((error) => {
-      console.error("Error loading data: " + error);
-      alert("Error loading data on the dashboard");
-    });
+async function getDataBasedOnTimePeriod(TIME_PERIOD) {
+  const data = await loadData();
+  const timeFrameKeys = Object.keys(timeFrameMap);
+  const timeFrameValues = Object.values(timeFrameMap);
+  // Set titles
+  activityList.forEach((activity, index) => {
+    document.getElementById(`js-${activity}-heading`).textContent =
+      data[index].title;
+  });
+  activityList.forEach((activity, index) => {
+    updateAllActivities(
+      activity,
+      data[index].timeframes[timeFrameKeys[TIME_PERIOD]].current,
+      data[index].timeframes[timeFrameKeys[TIME_PERIOD]].previous,
+      timeFrameValues[TIME_PERIOD]
+    );
+  });
+  setActiveTimeFrame(timeFrameKeys[TIME_PERIOD]);
 }
