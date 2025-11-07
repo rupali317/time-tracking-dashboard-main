@@ -15,6 +15,7 @@
   --color-misc-4: hsl(145, 58%, 55%); /* #4BCF82 */
   --color-misc-5: hsl(264, 64%, 52%); /* #7335D2 */
   --color-misc-6: hsl(43, 84%, 65%); /* #F1C75B */
+  --color-misc-7: hsl(348, 100%, 88%); /* #ffc2ce */
 
   /* Font sizes */
   --font-size-1: 0.9375rem; /* 15px */
@@ -37,7 +38,8 @@
 
   /* Border widths */
   --border-width-1: 0rem;
-  --border-width-2: 0.1875rem; /* 3px */
+  --border-width-2: 0.0625rem; /* 1px */
+  --border-width-3: 0.25rem; /* 4px */
 
   /* Border radius */
   --border-radius-1: 0.9375rem; /* 15px */
@@ -358,6 +360,22 @@ button {
   font-weight: var(--font-weight-light);
 }
 
+.error-container {
+  padding: var(--space-26);
+  background-color: var(--color-misc-7);
+  color: var(--color-primary-6);
+  font-weight: var(--font-weight-medium);
+  border: var(--border-width-2) solid var(--color-misc-3);
+  border-bottom-width: var(--border-width-3);
+  min-width: 18.75rem; /* 300px */
+  text-align: center;
+  transform: translateX(-50%);
+  left: 50%;
+  top: var(--space-4);
+  position: absolute;
+  z-index: 2;
+}
+
 @media (min-width: 80rem) {
   body {
     margin: var(--space-none);
@@ -453,3 +471,4 @@ button {
 /* RRC - Check why border radius at the bottom of the cards produce the faint color */
 /* RRC - Safari - check why cursor pointer is not showing immediately */
 /* RRC - Safari - The three dot icon seems squashed */
+/* RRC Todo: Add icon to close the error container */

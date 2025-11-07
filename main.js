@@ -63,6 +63,7 @@ function updateAllActivities(activity, current, previous, timeFrameLabel) {
 }
 
 function setActiveTimeFrame(activePeriod) {
+  const timePeriodList = document.querySelectorAll("[id^=js-button]");
   timePeriodList.forEach((timePeriod) => {
     timePeriod.classList.remove("active");
     timePeriod.ariaPressed = "false";
@@ -75,21 +76,35 @@ function setActiveTimeFrame(activePeriod) {
 }
 
 async function getDataBasedOnTimePeriod(TIME_PERIOD) {
-  const data = await loadData();
-  // Set titles
-  activityList.forEach((activity, index) => {
-    const headingElement = document.getElementById(`js-${activity}-heading`);
-    if (headingElement) {
-      headingElement.textContent = data[index].title;
-    }
-  });
-  activityList.forEach((activity, index) => {
-    updateAllActivities(
-      activity,
-      data[index].timeframes[timeFrameKeys[TIME_PERIOD]].current,
-      data[index].timeframes[timeFrameKeys[TIME_PERIOD]].previous,
-      timeFrameValues[TIME_PERIOD]
+  try {
+    const data = await loadData();
+    // Set titles
+    activityList.forEach((activity, index) => {
+      const headingElement = document.getElementById(`js-${activity}-heading`);
+      if (headingElement) {
+        headingElement.textContent = data[index].title;
+      }
+    });
+    activityList.forEach((activity, index) => {
+      updateAllActivities(
+        activity,
+        data[index].timeframes[timeFrameKeys[TIME_PERIOD]].current,
+        data[index].timeframes[timeFrameKeys[TIME_PERIOD]].previous,
+        timeFrameValues[TIME_PERIOD]
+      );
+    });
+    setActiveTimeFrame(timeFrameKeys[TIME_PERIOD]);
+  } catch (error) {
+    console.error("Failed to update dashboard", error);
+    UpdateErrorOnDasboard(
+      "Unable to load time tracking data. Please refresh the page."
     );
-  });
-  setActiveTimeFrame(timeFrameKeys[TIME_PERIOD]);
+  }
+}
+
+function UpdateErrorOnDasboard(MESSAGE) {
+  const errorContainer = document.createElement("div");
+  errorContainer.textContent = MESSAGE;
+  errorContainer.className = "error-container";
+  document.body.append(errorContainer);
 }
