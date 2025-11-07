@@ -4,17 +4,18 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
+- [The challenge](#the-challenge)
+- [Screenshots](#screenshots)
+  - [1. Desktop version](#1-desktop-version)
+  - [2. Mobile version](#2-mobile-version)
+- [PageSpeed Insights results](#pagespeed-insights-results)
+- [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Tested with](#tested-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+- [Acknowledgement](#acknowledgement)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -26,16 +27,31 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - Switch between viewing Daily, Weekly, and Monthly stats
 
-### Screenshot
+### Screenshots
 
-###
+##### 1. Desktop version
 
-![]()
+Default state
+![Time tracking dashboard - default](./screenshots/default/Time-tracking-dashboard-desktop-default.png)
+
+Hover state
+![Time tracking dashboard - hover](./screenshots/hover/Time-tracking-dashboard-desktop-hover.png)
+
+##### 2. Mobile version
+
+Default state
+![Time tracking dashboard - default](./screenshots/default/Time-tracking-dashboard-mobile-default.png)
+
+### PageSpeed Insights results
+
+[Mobile version](ttps://pagespeed.web.dev/analysis/https-rupali317-github-io-time-tracking-dashboard-main/5z9gefggoz?form_factor=mobile)
+
+[Desktop version](https://pagespeed.web.dev/analysis/https-rupali317-github-io-time-tracking-dashboard-main/5z9gefggoz?form_factor=desktop)
 
 ### Links
 
-- Solution URL: []()
-- Live Site URL: []()
+- Solution URL: [Time tracking dashboard solution URL](https://github.com/rupali317/time-tracking-dashboard-main)
+- Live Site URL: [Time tracking dashboard live URL](https://rupali317.github.io/time-tracking-dashboard-main/)
 
 ## My process
 
@@ -44,15 +60,22 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- CSS Grid
+- Javascript
+- [Github Pages](https://pages.github.com/) - Allows to host static websites directly from a GitHub repository.
+
+### Tested with
+
+- Browsers used for testing: Google Chrome, Firefox, Safari, Brave, Microsoft Edge.
+- Devices:
+  - (Real) MacBook Pro (14-inch), Huawei Mate 20 Pro, Samsung Galaxy S20+, iPad Air (13-inch), MacBook Pro (13-inch).
+  - (Virtual) The mobile and tablet devices mentioned under Chrome's dev console.
+- Screen reader: MacOS VoiceOver.
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+TBD
 
 To see how you can add code snippets, see below:
 
@@ -72,23 +95,11 @@ const proudOfThisFunc = () => {
 };
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+## Acknowledgement
 
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- In all my projects, I always refer to CSS reset to provide a clean/consistent slate for the CSS stylings across all the browsers. [Joshua's CSS reset](https://www.joshwcomeau.com/css/custom-css-reset/), [Andy Bell's CSS reset](https://piccalil.li/blog/a-more-modern-css-reset/)
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+- Linkedin profile - [Rupali Roy Choudhury](https://www.linkedin.com/in/rupali-rc/)
+- Frontend Mentor - [@rupali317](https://www.frontendmentor.io/profile/rupali317)
