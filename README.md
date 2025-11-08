@@ -44,7 +44,7 @@ Default state
 
 ### PageSpeed Insights results
 
-[Mobile version](ttps://pagespeed.web.dev/analysis/https-rupali317-github-io-time-tracking-dashboard-main/5z9gefggoz?form_factor=mobile)
+[Mobile version](https://pagespeed.web.dev/analysis/https-rupali317-github-io-time-tracking-dashboard-main/5z9gefggoz?form_factor=mobile)
 
 [Desktop version](https://pagespeed.web.dev/analysis/https-rupali317-github-io-time-tracking-dashboard-main/5z9gefggoz?form_factor=desktop)
 
@@ -75,25 +75,7 @@ Default state
 
 ### What I learned
 
-TBD
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
+I have put effort in refactoring. How the use of objects can eliminate repetition. Use javasscript for the behaviour as musch as possible rather than having the function calls at the HTML level, which should ideally be for the structure.
 
 ## Acknowledgement
 
