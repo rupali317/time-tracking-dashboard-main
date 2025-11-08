@@ -456,8 +456,6 @@ button {
     .main-background-1 {
       flex-direction: column;
       align-items: start;
-      row-gap: var(--space-13);
-      column-gap: var(--space-13);
       gap: var(--space-20);
       padding: var(--space-17) var(--space-14) var(--space-24);
 
