@@ -182,10 +182,22 @@ button {
   text-decoration: none;
   color: var(--color-primary-4);
   font-size: var(--font-size-2);
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    filter: var(--filter-1);
+  }
 
   &:hover,
   &.active {
     color: var(--color-neutral-1);
+  }
+
+  img {
+    width: var(--space-6); /* 21px */
+    height: auto;
   }
 }
 
@@ -303,21 +315,6 @@ article.dashboard {
       background-color: var(--color-primary-6);
       cursor: pointer;
     }
-  }
-}
-
-button {
-  background-color: transparent;
-  border: none;
-
-  &:hover {
-    cursor: pointer;
-    filter: var(--filter-1);
-  }
-
-  img {
-    width: var(--space-6); /* 21px */
-    height: auto;
   }
 }
 
