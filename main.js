@@ -84,9 +84,10 @@ async function getDataBasedOnTimePeriod(TIME_PERIOD) {
     if (
       typeof TIME_PERIOD !== "number" ||
       TIME_PERIOD < 0 ||
-      TIME_PERIOD > timeFrameKeys.length
+      TIME_PERIOD >= timeFrameKeys.length
     ) {
       console.warn(`Invalid time period: ${TIME_PERIOD}`);
+      return;
     }
     // Set titles
     activityList.forEach((activity, index) => {
