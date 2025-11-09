@@ -103,7 +103,10 @@ async function getDataBasedOnTimePeriod(TIME_PERIOD) {
 
 function updateErrorOnDashboard(MESSAGE) {
   const errorContainer = document.createElement("div");
-  errorContainer.textContent = MESSAGE;
-  errorContainer.className = "error-container";
-  document.body.append(errorContainer);
+  const messageWrapperContainer = document.getElementById("js-message-wrapper");
+  if (messageWrapperContainer) {
+    errorContainer.textContent = MESSAGE;
+    errorContainer.className = "error-container";
+    messageWrapperContainer.append(errorContainer);
+  }
 }
