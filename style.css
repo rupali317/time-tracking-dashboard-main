@@ -398,10 +398,6 @@ article.dashboard {
     align-items: start;
   }
 
-  .margin-top-2 {
-    margin-top: var(--space-7);
-  }
-
   .card-background-1 {
     grid-area: placement-1;
   }
