@@ -63,7 +63,6 @@ function updateAllActivities(activity, current, previous, timeFrameLabel) {
 }
 
 function setActiveTimeFrame(activePeriod) {
-  const timePeriodList = document.querySelectorAll("[id^=js-button]");
   timePeriodList.forEach((timePeriod) => {
     timePeriod.classList.remove("active");
     timePeriod.ariaPressed = "false";
