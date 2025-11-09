@@ -70,13 +70,24 @@ function setActiveTimeFrame(activePeriod) {
   const currentActivePeriod = document.getElementById(
     `js-button-${activePeriod}`
   );
-  currentActivePeriod.classList.add("active");
-  currentActivePeriod.ariaPressed = "true";
+  if (currentActivePeriod) {
+    currentActivePeriod.classList.add("active");
+    currentActivePeriod.ariaPressed = "true";
+  } else {
+    console.warn(`Element with ID js-button-${activePeriod} not found.`);
+  }
 }
 
 async function getDataBasedOnTimePeriod(TIME_PERIOD) {
   try {
     const data = await loadData();
+    if (
+      typeof TIME_PERIOD !== "number" ||
+      TIME_PERIOD < 0 ||
+      TIME_PERIOD > timeFrameKeys.length
+    ) {
+      console.warn(`Invalid time period: ${TIME_PERIOD}`);
+    }
     // Set titles
     activityList.forEach((activity, index) => {
       const headingElement = document.getElementById(`js-${activity}-heading`);
