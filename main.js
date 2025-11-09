@@ -16,6 +16,7 @@ const timeFrameMap = {
 let cachedData = null;
 const timeFrameKeys = Object.keys(timeFrameMap);
 const timeFrameValues = Object.values(timeFrameMap);
+const timePeriodList = document.querySelectorAll("[id^=js-button]");
 
 document.addEventListener("DOMContentLoaded", () => {
   initializeEventListeners();
@@ -23,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initializeEventListeners() {
-  const timePeriodList = document.querySelectorAll("[id^=js-button]");
   timePeriodList.forEach((timePeriod, index) =>
     timePeriod.addEventListener("click", () => getDataBasedOnTimePeriod(index))
   );
@@ -96,13 +96,13 @@ async function getDataBasedOnTimePeriod(TIME_PERIOD) {
     setActiveTimeFrame(timeFrameKeys[TIME_PERIOD]);
   } catch (error) {
     console.error("Failed to update dashboard", error);
-    UpdateErrorOnDasboard(
+    updateErrorOnDashboard(
       "Unable to load time tracking data. Please refresh the page."
     );
   }
 }
 
-function UpdateErrorOnDasboard(MESSAGE) {
+function updateErrorOnDashboard(MESSAGE) {
   const errorContainer = document.createElement("div");
   errorContainer.textContent = MESSAGE;
   errorContainer.className = "error-container";

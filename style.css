@@ -166,7 +166,7 @@ svg {
 
 /*---------------------------- Main stylings -----------------------------*/
 body {
-  font-family: "Rubik";
+  font-family: "Rubik", sans-serif;
   background-color: var(--color-primary-1);
   color: var(--color-neutral-1);
   line-height: var(--line-height-1);
@@ -205,7 +205,7 @@ main {
 }
 
 .break-word {
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .flex-style-1,
