@@ -245,7 +245,7 @@ article.dashboard {
   display: flex;
   flex-direction: column;
   gap: var(--space-7);
-  max-width: 20.4375rem; /* 327px */
+  max-width: 75vw;
   margin: auto;
 }
 
