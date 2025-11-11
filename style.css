@@ -45,6 +45,7 @@
   --border-radius-1: 0.9375rem; /* 15px */
   --border-radius-2: 100%;
   --border-radius-3: 0.625rem; /* 10px */
+  --border-radius-4: 0.125rem; /* 2px */
 
   /* Spacings */
   --space-none: 0rem;
@@ -188,6 +189,10 @@ button {
   &:hover {
     cursor: pointer;
     filter: var(--filter-1);
+  }
+
+  &:focus {
+    outline: var(--border-radius-4) solid var(--color-neutral-1);
   }
 
   &:hover,
